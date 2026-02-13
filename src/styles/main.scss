@@ -1,0 +1,13 @@
+$bgColor: #040714;
+$textColor: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bgColor;
+  color: $textColor;
+}
