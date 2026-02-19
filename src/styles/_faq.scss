@@ -68,6 +68,10 @@
                 }
                 .faq__questions__item__answer {
                     max-height: 300px;
+
+                    @media (max-width: 1099px) {
+                        max-height: 50em;
+                    }
                 }
             }
         }
