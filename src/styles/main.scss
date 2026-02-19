@@ -6,6 +6,7 @@
 @use "available-devices";
 @use "faq";
 @use "footer";
+@use "header";
 
 //import fonts
 @font-face {
@@ -24,6 +25,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Avenir", sans-serif;
+    list-style: none;
 }
 
 body {
@@ -72,24 +74,51 @@ body {
 }
 
 .button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 60px;
     font-size: 18px;
     color: variaveis.$corTextoSecundario;
-    background-color: #6421ff;
+    background-color: variaveis.$corFundoBotaoPrimario;
     border-radius: 4px;
-    border: none;
-    margin-top: 2vw;
-    margin-bottom: 8px;
+    border: 1px solid variaveis.$corFundoBotaoPrimario;
     text-transform: uppercase;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
     cursor: pointer;
+    transition: all 0.3s ease;
 
     &:hover {
-        background-color: #711cf8;
+        background-color: lighten($color: variaveis.$corFundoBotaoPrimario, $amount: 4%); //lighten é uma função do Sass que clareia a cor especificada em $color em uma quantidade definida por $amount, que é expressa como uma porcentagem. Neste caso, a cor do botão primário será clareada em 4% quando o usuário passar o mouse sobre ele.
         transition: all 0.3s ease;
         transform: scale(1.05);
     }
+
+        &--secondary {
+            background-color: variaveis.$corFundoBotaoSecundario;
+            border-color: variaveis.$corFundoBotaoSecundario;
+    
+            &:hover {
+                background-color: lighten($color: variaveis.$corFundoBotaoSecundario, $amount: 4%);
+                transition: all 0.3s ease;
+                transform: scale(1.05);
+            }
+        }
+
+        &--dark {
+            background-color: rgba(variaveis.$corFundoBotaoDark, 0.8);
+            border-color: variaveis.$corTextoSecundario;
+
+            &:hover {
+                background-color: variaveis.$corTextoSecundario;
+                color: variaveis.$corDeFundo;
+                transition: all 0.3s ease;
+                transform: scale(1.05);
+            }
+        }
 }
 
 .image-text-section {

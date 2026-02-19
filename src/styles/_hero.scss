@@ -7,6 +7,11 @@
     text-align: center;
     background-size: cover; //cover é um valor para a propriedade background-size que faz com que a imagem de fundo cubra toda a área do elemento, mesmo que isso signifique cortar parte da imagem ou distorcê-la.
 
+    .button {
+        margin-top: 2vw;
+        margin-bottom: 8px;
+    }
+
     &__content {
         max-width: 640px;
 
