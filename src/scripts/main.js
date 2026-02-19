@@ -44,12 +44,19 @@ function exibeElementosDoHeader() { // Função para exibir os elementos do head
     header.classList.remove('header--is-hidden'); // Remove a classe "header--is-hidden" do elemento "header", tornando-o visível novamente
 }
 
+/* 
 function abreOuFechaResposta(elemento) { // Função para abrir ou fechar a resposta de uma pergunta frequente
     const classe = 'faq__questions__item--is-open'; // Define a classe que será adicionada ou removida para abrir ou fechar a resposta
 
-    const elementoPai = elemento.target.parentNode; // Obtém o elemento pai da pergunta clicada, que é o item da pergunta frequente, usando "parentNode" para acessar o elemento pai
+    const elementoPai = elemento.target.parentNode; // Obtém o elemento pai da pergunta clicada, que é o item da pergunta frequente, usando "parentNode" para acessar o elemento pai e o "target" para acessar o elemento que foi clicado, garantindo que a classe seja adicionada ou removida ao item correto da pergunta frequente
     
     elementoPai.classList.toggle(classe); // Alterna a classe definida no elemento pai, abrindo ou fechando a resposta associada à pergunta clicada, pois o toggle adiciona a classe se ela não estiver presente e remove a classe se ela já estiver presente, permitindo que a resposta seja exibida ou ocultada conforme o estado atual da classe.
+}*/
+
+function abreOuFechaResposta(e) {
+    const classe = 'faq__questions__item--is-open';
+    const item = e.target.closest('.faq__questions__item'); // Obtém o elemento mais próximo com a classe "faq__questions__item" a partir do elemento clicado, usando "closest" para garantir que a classe seja adicionada ou removida ao item correto da pergunta frequente, mesmo que o clique ocorra em um elemento filho dentro do item da pergunta frequente
+    item.classList.toggle(classe);
 }
 
 function removeActiveButton() { // Função para remover a classe "shows__tabs__button--is-active" de todos os botões, garantindo que apenas o botão selecionado seja destacado

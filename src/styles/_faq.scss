@@ -25,17 +25,9 @@
                 display: block;
                 cursor: pointer;
                 position: relative;
-
-                &::after {
-                    content: '+';
-                    position: absolute;
-                    top: 0;
-                    right: 24px;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    font-size: 40px;
-                }
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
             }
 
             &__answer {
@@ -62,10 +54,14 @@
 
             &--is-open {
 
-                .faq__questions__item__question::after {
-                    content: '-';
-                    font-size: 60px;
+                .faq__questions__item__question {
+                    .sinais {
+                        &__mais {
+                            display: none;
+                        }
+                    }
                 }
+
                 .faq__questions__item__answer {
                     max-height: 300px;
 
