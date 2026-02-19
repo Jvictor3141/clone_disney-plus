@@ -168,7 +168,11 @@
         </div>
     </section>
     <section class="image-text-section image-text-section--image-full-width">
-        <img src="./dist/images/fundo_rei_leao.png" alt="Imagem de fundo do Rei Leão">
+        <picture>
+            <source media="(max-width: 768px)" srcset="./dist/images/fundo_rei_leao_celular.png"/> <!--A tag <source> dentro da tag <picture> permite definir uma imagem específica para telas menores, melhorando a experiência do usuário em dispositivos móveis.-->
+            <img src="./dist/images/fundo_rei_leao.png" alt="Imagem de fundo do Rei Leão">
+        </picture>
+        <!--A tag <picture> permite definir diferentes imagens para diferentes tamanhos de tela, melhorando a responsividade e desempenho do site.-->
         <div class="image-text-section__text_container image-text-section--image-full-width__text_container">
             <h2 class="title">Baixe filmes e séries</h2>
             <p class="text--big">

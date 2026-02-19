@@ -26,6 +26,10 @@
         padding: 8px 36px;
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 768px) {
+            padding: 0 12px 0 20px;
+        }
     }
 
     &__logo {
@@ -33,6 +37,10 @@
         width: 100%;
         margin: 5px;
         transition: opacity 0.5s ease; // Adiciona uma transição suave para a mudança de opacidade e visibilidade do logo, tornando a experiência do usuário mais agradável ao rolar a página
+
+        @media (max-width: 768px) {
+            max-width: 64px;
+        }
     }
 
     &__links {
@@ -46,9 +54,12 @@
 
     .button {
         height: 50px;
-    }
-}
 
-.hidden {
-    visibility: hidden;
+        @media (max-width: 768px) {
+            height: 40px;
+            font-size: 13px;
+            padding: 8px 11px;
+            letter-spacing: 0;
+        }
+    }
 }

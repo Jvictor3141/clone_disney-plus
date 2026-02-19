@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const heroHeight = document.querySelector('.hero').clientHeight; // Obtém a altura do elemento com a classe "hero" usando "clientHeight", que retorna a altura do elemento em pixels, incluindo o conteúdo, mas excluindo as bordas e margens
 
+    // Seção de header, programação para ocultar ou exibir os elementos do header com base na posição do scroll
     window.addEventListener('scroll', function() { // Adiciona um evento de scroll à janela, para que possamos executar uma função sempre que o usuário rolar a página
         const currentPosition = window.scrollY; // Obtém a posição atual do scroll vertical usando "scrollY", que retorna a quantidade de pixels que o documento foi rolado para baixo
 
