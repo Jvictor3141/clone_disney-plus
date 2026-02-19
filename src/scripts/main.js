@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('[data-tab-button]'); // Seleciona todos os botões de aba usando o atributo "data-tab-button", assim criamos um arrey com os botões
+    const questions = document.querySelectorAll('[data-faq-question]'); // Seleciona todas as perguntas frequentes usando o atributo "data-faq-question", criando um array com as perguntas
 
     for (let i = 0; i < buttons.length; i++) { // Percorre o array de botões
         buttons[i].addEventListener('click', function(botao) { // Adiciona um evento de clique a cada botão
@@ -12,7 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
             botao.target.classList.add('shows__tabs__button--is-active'); // Adiciona a classe "shows__tabs__button--is-active" ao botão clicado, destacando-o como o botão ativo
         });
     }
+
+    for (let i = 0; i < questions.length; i++) { // Percorre o array de perguntas frequentes
+        questions[i].addEventListener('click', abreOuFechaResposta); // Adiciona um evento de clique a cada pergunta frequente, chamando a função "abreOuFechaResposta" quando uma pergunta for clicada
+    }
 });
+
+function abreOuFechaResposta(elemento) { // Função para abrir ou fechar a resposta de uma pergunta frequente
+    const classe = 'faq__questions__item--is-open'; // Define a classe que será adicionada ou removida para abrir ou fechar a resposta
+
+    const elementoPai = elemento.target.parentNode; // Obtém o elemento pai da pergunta clicada, que é o item da pergunta frequente, usando "parentNode" para acessar o elemento pai
+    
+    elementoPai.classList.toggle(classe); // Alterna a classe definida no elemento pai, abrindo ou fechando a resposta associada à pergunta clicada, pois o toggle adiciona a classe se ela não estiver presente e remove a classe se ela já estiver presente, permitindo que a resposta seja exibida ou ocultada conforme o estado atual da classe.
+}
 
 function removeActiveButton() { // Função para remover a classe "shows__tabs__button--is-active" de todos os botões, garantindo que apenas o botão selecionado seja destacado
     const buttons = document.querySelectorAll('[data-tab-button]'); // Seleciona todos os botões de aba usando o atributo "data-tab-button", criando um array com os botões
