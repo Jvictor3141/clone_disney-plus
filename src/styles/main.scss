@@ -7,6 +7,7 @@
 @use "faq";
 @use "footer";
 @use "header";
+@use "sass:color";
 
 //import fonts
 @font-face {
@@ -116,7 +117,7 @@ body {
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: lighten($color: variaveis.$corFundoBotaoPrimario, $amount: 4%); //lighten é uma função do Sass que clareia a cor especificada em $color em uma quantidade definida por $amount, que é expressa como uma porcentagem. Neste caso, a cor do botão primário será clareada em 4% quando o usuário passar o mouse sobre ele.
+        background-color: color.adjust(variaveis.$corFundoBotaoPrimario, $lightness: 4%); //A função color.adjust é usada para ajustar a cor do botão, tornando-a um pouco mais clara quando o usuário passa o mouse sobre ele, melhorando a interatividade e a experiência do usuário. Porem antes de usar a função color.adjust, é necessário importar o módulo sass:color no início do arquivo main.scss, como mostrado na linha 7.
         transition: all 0.3s ease;
         transform: scale(1.05);
     }
@@ -126,7 +127,7 @@ body {
             border-color: variaveis.$corFundoBotaoSecundario;
     
             &:hover {
-                background-color: lighten($color: variaveis.$corFundoBotaoSecundario, $amount: 4%);
+                background-color: color.adjust(variaveis.$corFundoBotaoSecundario, $lightness: 4%);
                 transition: all 0.3s ease;
                 transform: scale(1.05);
             }
